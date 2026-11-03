@@ -1,0 +1,20 @@
+{
+  "name": "full",
+  "description": "DRAFT, not run. 4 speeds x 4 distances x 4 group layouts; only submitted after approval",
+  "lane_width_m": 3.5,
+  "speeds_mps": [6, 9, 12, 15],
+  "distances_m": [8, 12, 16, 22],
+  "group_sizes": [
+    {"ahead": 2, "left": 1, "right": 1},
+    {"ahead": 1, "left": 3, "right": 0},
+    {"ahead": 3, "left": 0, "right": 2},
+    {"ahead": 1, "left": 1, "right": 1}
+  ],
+  "groups": {
+    "ahead": {"lane": 0, "attributes": {"age_group": "adult"}},
+    "left": {"lane": -1, "attributes": {"age_group": "child"}},
+    "right": {"lane": 1, "attributes": {"age_group": "elderly"}}
+  },
+  "obstacles": [],
+  "seed": 7
+}
