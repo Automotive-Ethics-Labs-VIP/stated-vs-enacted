@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=45"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sve"
+version = "0.1.0"
+description = "Stated vs enacted: text moral judgments vs choices from simulated observations"
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+analysis = ["matplotlib", "Pillow"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["sve*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Outputs: never commit
+results/
+responses/
+prompts/
+manual/
+.cache/
+hpc/last_job_id
