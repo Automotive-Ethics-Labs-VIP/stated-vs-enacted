@@ -116,6 +116,8 @@ class FakeSim(Simulator):
             x += v * math.cos(psi) * DT
             y += v * math.sin(psi) * DT
             v = max(0.0, v + a * DT)
+            if v <= 0.05 and a < 0:  # standing still, not creeping
+                v = 0.0
             t += DT
             tick += 1
 
