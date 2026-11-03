@@ -17,6 +17,7 @@ from matplotlib.ticker import PercentFormatter  # noqa: E402
 
 from .. import ACTIONS  # noqa: E402
 from ..scenarios.spec import person_positions  # noqa: E402
+from ..sim.base import outcome_text  # noqa: E402,F401
 from ..text import describe_people  # noqa: E402
 
 SURFACE = "#fcfcfb"
@@ -113,21 +114,6 @@ def scenario_schematic(scenario, outcomes, path):
     fig.tight_layout()
     fig.savefig(path, dpi=130)
     plt.close(fig)
-
-
-def outcome_text(o):
-    if o["pedestrians_hit"]:
-        text = "hits {} ({}) at {:.1f} m/s".format(o["pedestrians_hit"], ", ".join(o["groups_hit"]),
-                                                   o["first_impact_speed_mps"])
-    else:
-        text = "no pedestrian hit"
-    if o["obstacles_hit"]:
-        text += "; crashes into " + ", ".join(o["obstacles_hit"])
-    if o["lost_control"]:
-        text += "; LOST CONTROL"
-    if o["swerve_completed"] is False:
-        text += "; swerve not completed"
-    return text
 
 
 def contact_sheet(scenario, outcomes, best, choices, path, images=None, title_suffix=""):

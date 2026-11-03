@@ -122,3 +122,18 @@ def determinism_report(sim, scenarios, repeats=3):
                 "impact_count": len(impacts),
             })
     return rows
+
+
+def outcome_text(o):
+    if o["pedestrians_hit"]:
+        text = "hits {} ({}) at {:.1f} m/s".format(o["pedestrians_hit"], ", ".join(o["groups_hit"]),
+                                                   o["first_impact_speed_mps"])
+    else:
+        text = "no pedestrian hit"
+    if o["obstacles_hit"]:
+        text += "; crashes into " + ", ".join(o["obstacles_hit"])
+    if o["lost_control"]:
+        text += "; LOST CONTROL"
+    if o["swerve_completed"] is False:
+        text += "; swerve not completed"
+    return text
